@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > div {
+    width: 80%;
+    min-height: 30rem;
+    border: 1px solid red;
+}
+
+.article {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.article:hover {
+    cursor: pointer;
+}
+
+img {
+    max-width: 10rem;
+    max-height: 10rem;
+}
