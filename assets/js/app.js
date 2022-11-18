@@ -1,4 +1,4 @@
-import '../css/style.css'
+import '../styles/style.scss'
 import './Article';
 import {Article} from "./Article";
 import {NewsGetter} from "./NewsGetter";
