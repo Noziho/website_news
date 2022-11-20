@@ -1,3 +1,4 @@
+@use "modules/var";
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +9,44 @@ html {
     font-size: 62.5%;
 }
 
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    padding: 1rem;
+    background-color: transparent;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    justify-content: space-between;
+
+    button {
+        border: none;
+        padding: 1rem;
+        background: var.$main-color;
+        color: var.$text-color;
+    }
+}
+
+.dark {
+    font-size: 1.6rem;
+    background: var.$main-color;
+    color: var.$text-color;
+}
+
 body {
+    @extend .dark;
+    background-color: var.$light-main-color;
+    color: darken(var.$text-color, 85%);
+}
+
+h1 {
     font-size: 1.6rem;
 }
+
+
+
+
+
 
 .container {
     width: 100%;
@@ -23,12 +59,13 @@ body {
 .container > div {
     width: 80%;
     min-height: 30rem;
-    border: 1px solid red;
 }
 
 .article {
     padding: 1rem;
     margin: 1rem;
+    border-radius: 6px;
+    border: 1px solid lightgray;
 }
 
 .article:hover {
@@ -39,3 +76,5 @@ img {
     max-width: 10rem;
     max-height: 10rem;
 }
+
+

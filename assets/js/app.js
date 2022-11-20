@@ -1,9 +1,11 @@
 import '../styles/style.scss'
-import './Article';
-import {Article} from "./Article";
 import {NewsGetter} from "./NewsGetter";
+import {ThemeMode} from "./ThemeMode";
 
 
 
 let allNews = new NewsGetter();
 allNews.getNews();
+
+let themeButton = new ThemeMode();
+themeButton.createThemeButton();
