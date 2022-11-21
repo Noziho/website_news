@@ -68,33 +68,37 @@ h1 {
     border: 1px solid lightgray;
     display: flex;
     flex-flow: row wrap;
+
     h1 {
         width: 100%;
+        margin: 1rem;
+        font-size: 1.8rem;
     }
     p {
-        width: 100%;
+        @extend h1;
     }
 
     img {
-        width: 100%;
+        @extend h1;
         max-width: 20rem;
         max-height: 20rem;
     }
 
-    button {
+    div {
         margin: 1rem;
         padding: 2rem;
         border: none;
-        width: 100%;
+        min-width: 100%;
+        cursor: pointer;
+        background: transparent;
+        min-height: 100%;
+        position: absolute;
     }
 }
 
 .article:hover {
     cursor: pointer;
 }
-
-
-
 
 .hidden {
     display: none;

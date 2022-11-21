@@ -12,6 +12,7 @@ export function Article (title, resume, date, author, imageSrc) {
 
         let newsContainer = document.createElement("div");
         newsContainer.className = "article";
+        newsContainer.style.position = "relative";
 
         let articleTitle = document.createElement('h1');
         articleTitle.innerHTML = this.title;
@@ -24,17 +25,22 @@ export function Article (title, resume, date, author, imageSrc) {
         articleImage.alt = "Article Image";
 
         let articleAuthor = document.createElement('p')
-        articleAuthor.innerHTML = this.author;
+
+        if (this.author === null) {
+            articleAuthor.innerHTML = "Unknown"
+        }else {
+            articleAuthor.innerHTML = this.author;
+        }
+
 
         let articleDate = document.createElement('p');
         articleDate.innerHTML = this.date;
 
-        let showArticle = document.createElement('button');
-        showArticle.innerHTML = "Show";
+        let showArticle = document.createElement('div');
+        showArticle.classList = "ShowButton";
 
 
-        let closeArticle = document.createElement('button');
-        closeArticle.innerHTML = "Close";
+        let closeArticle = document.createElement('div');
 
         showArticle.addEventListener("click", function () {
             newsContainer.id = "showArticle";
