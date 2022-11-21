@@ -13,18 +13,6 @@ export function Article (title, resume, date, author, imageSrc) {
         let newsContainer = document.createElement("div");
         newsContainer.className = "article";
 
-
-
-        newsContainer.addEventListener('mouseover', function () {
-            newsContainer.classList = 'overed';
-        })
-
-        newsContainer.addEventListener('mouseleave', function () {
-            newsContainer.classList = 'article';
-        })
-
-
-
         let articleTitle = document.createElement('h1');
         articleTitle.innerHTML = this.title;
 
@@ -33,6 +21,7 @@ export function Article (title, resume, date, author, imageSrc) {
 
         let articleImage = document.createElement('img');
         articleImage.src = this.imageSrc;
+        articleImage.alt = "Article Image";
 
         let articleAuthor = document.createElement('p')
         articleAuthor.innerHTML = this.author;
@@ -40,29 +29,46 @@ export function Article (title, resume, date, author, imageSrc) {
         let articleDate = document.createElement('p');
         articleDate.innerHTML = this.date;
 
-        newsContainer.addEventListener("click", function () {
-            newsContainer.classList = "overed";
-            let allNews = document.querySelectorAll('.article');
-            allNews.forEach(function (element){
-                element.style.display = "none";
+        let showArticle = document.createElement('button');
+        showArticle.innerHTML = "Show";
+
+
+        let closeArticle = document.createElement('button');
+        closeArticle.innerHTML = "Close";
+
+        showArticle.addEventListener("click", function () {
+            newsContainer.id = "showArticle";
+            let news = document.querySelectorAll(".article");
+            news.forEach(function (element) {
+                element.classList = "article hidden";
+                showArticle.remove();
+            })
+
+            closeArticle.addEventListener("click", () => {
+                let news = document.querySelectorAll(".article");
+                news.forEach(function (element) {
+                    element.classList = "article show";
+                    element.id = "";
+                    resumeText.remove();
+                    closeArticle.remove();
+                    newsContainer.append(showArticle);
+                })
             })
 
             newsContainer.append(resumeText);
-
+            newsContainer.append(closeArticle);
         });
+
 
         newsContainer.append(articleTitle);
         newsContainer.append(articleAuthor);
         newsContainer.append(articleDate);
         newsContainer.append(articleImage);
+        newsContainer.append(showArticle);
 
 
         allNewsContainer.append(newsContainer);
 
-
-    }
-
-    this.printOneArticle = function (description) {
 
     }
 }

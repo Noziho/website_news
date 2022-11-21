@@ -48,10 +48,6 @@ h1 {
 }
 
 
-
-
-
-
 .container {
     width: 100%;
     min-height: 100vh;
@@ -70,15 +66,45 @@ h1 {
     margin: 1rem;
     border-radius: 6px;
     border: 1px solid lightgray;
+    display: flex;
+    flex-flow: row wrap;
+    h1 {
+        width: 100%;
+    }
+    p {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        max-width: 20rem;
+        max-height: 20rem;
+    }
+
+    button {
+        margin: 1rem;
+        padding: 2rem;
+        border: none;
+        width: 100%;
+    }
 }
 
 .article:hover {
     cursor: pointer;
 }
 
-img {
-    max-width: 10rem;
-    max-height: 10rem;
+
+
+
+.hidden {
+    display: none;
 }
 
+.show {
+    @extend .article;
+}
+
+#showArticle {
+    @extend .article;
+}
 

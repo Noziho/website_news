@@ -14,7 +14,6 @@ export function NewsGetter() {
             .then(response => response.json())
             .then(response => {
                 allNews.push(response.articles);
-                console.log(allNews);
                 for (let articles of allNews) {
                     for (let article of articles) {
                         let title = article.title;
